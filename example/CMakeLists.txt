@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.9)
+project(mylib_app VERSION 0.0.1 DESCRIPTION "app using mylib")
+set (CMAKE_CXX_STANDARD 17)
+find_library(MYLIB mylib)
+aux_source_directory(. SRC_LIST)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}  ${MYLIB})
